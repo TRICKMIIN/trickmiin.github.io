@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>José Cartagena – Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eaeaea;
+      color: #222;
+    }
+
+    header, section, footer {
+      background-color: #fff;
+      margin: 30px auto;
+      padding: 30px 40px;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    p, li {
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .skills-container > div {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .badge {
+      text-align: center;
+    }
+
+    .badge img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .badge img:hover {
+      transform: scale(1.05);
+    }
+
+    .badge p {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.95em;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>José Ignacio Cartagena Medina</h1>
+    <p>Ingenieur für Konnektivität und Netzwerke</p>
+  </header>
+
+  <section class="section">
+    <h2><span class="emoji">📌</span>Über mich</h2>
+    <p>
+      Ich bin ein Ingenieur für Konnektivität und Netzwerke mit großem Interesse an Cybersicherheit und Technologie im Allgemeinen. Ich bin begeistert davon, wie Systeme, Netzwerke und deren Sicherheit funktionieren, und motiviert, täglich Neues zu lernen, um meine Fähigkeiten zu verbessern und effektive IT-Lösungen zu bieten. Ich bin eine proaktive Person mit hoher Anpassungsfähigkeit und dem ständigen Wunsch, mich beruflich weiterzuentwickeln.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2><span class="emoji">🎯</span>Berufliches Ziel</h2>
+    <p>
+      Ich möchte mich im Bereich Netzwerke und Cybersicherheit beruflich weiterentwickeln und mein Wissen zur Implementierung, Verwaltung und Sicherung von IT-Infrastrukturen anwenden. Mein Ziel ist es, Teil eines Teams zu werden, in dem ich weiter lernen, neue technologische Herausforderungen annehmen und zur Sicherheit und Effizienz der Systeme im Unternehmen beitragen kann.
+    </p>
+  </section>
+
+  <section class="education">
+    <h2>🎓 Ausbildung</h2>
+    <ul>
+      <li><strong>Ingenieur für Konnektivität und Netzwerke</strong> (2021 – 2024) – DUOC UC</li>
+      <li><strong>Höherer Techniker in Pharmazie</strong> (2015 – 2017) – INACAP</li>
+    </ul>
+  </section>
+
+  <section class="skills">
+    <h2>🛠️ Fähigkeiten</h2>
+    <div class="skills-container">
+      <div class="technical">
+        <h3>⚙️ Technische Fähigkeiten</h3>
+        <ul>
+          <li>Verwaltung von LAN/WAN-Netzwerken</li>
+          <li>Routing-Protokolle (EIGRP, OSPF, BGP)</li>
+          <li>Netzwerksicherheit (Firewalls, ACLs, VPNs)</li>
+          <li>Konfiguration von Cisco-Geräten (Router und Switches)</li>
+          <li>Linux und Netzwerkbetriebssysteme</li>
+          <li>Netzwerkautomatisierung und einfache Skripte</li>
+          <li>Überwachungstools (Wireshark, Nmap)</li>
+        </ul>
+      </div>
+      <div class="soft">
+        <h3>🧠 Soziale Kompetenzen</h3>
+        <ul>
+          <li>Effektive Kommunikation</li>
+          <li>Anpassungsfähigkeit</li>
+          <li>Entscheidungsfindung</li>
+          <li>Zeitmanagement</li>
+          <li>Teamarbeit</li>
+          <li>Strategisches Denken</li>
+          <li>Führungskompetenz</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="languages">
+    <h2>🌐 Sprachen</h2>
+    <ul>
+      <li>Spanisch: Muttersprache</li>
+      <li>Englisch: Mittelstufe</li>
+    </ul>
+  </section>
+
+  <section id="badges">
+    <h2>🎖️ Abzeichen & Erfolge</h2>
+    <div class="badge-grid">
+      <div class="badge">
+        <a href="https://www.credly.com/badges/0f768e74-fdc1-4377-82bd-57985f0ce75b/public_url" target="_blank">
+          <img alt="CCNA: Switching, Routing, and Wireless Essentials" src="./img/ccna-switching-routing-and-wireless-essentials.1.png"/>
+          <p>CCNA: Switching, Routing, and Wireless Essentials</p>
+        </a>
+      </div>
+      <div class="badge">
+        <a href="https://www.credly.com/badges/47cfb20f-7986-46cd-b520-1332ae6326f0/public_url" target="_blank">
+          <img alt="CCNA: Enterprise Networking, Security, and Automation" src="./img/ccna-enterprise-networking-security-and-automation.png"/>
+          <p>CCNA: Enterprise Networking, Security, and Automation</p>
+        </a>
+      </div>
+      <div class="badge">
+        <a href="https://www.credly.com/badges/e0903876-2f7f-4078-9ead-a9ce028033ee/public_url" target="_blank">
+          <img alt="CCNP: Core Networking" src="./img/ccna-enterprise-networking-security-and-automation.png"/>
+          <p>CCNP: Core Networking</p>
+        </a>
+      </div>
+      <div class="badge">
+        <a href="https://www.credly.com/badges/9f105464-2897-419e-a083-8575f595bf06/public_url" target="_blank">
+          <img alt="Network Security" src="./img/network-security.png"/>
+          <p>Netzwerksicherheit</p>
+        </a>
+      </div>
+      <div class="badge">
+        <a href="https://www.credly.com/badges/5d4ae9ba-10cb-4191-b5b5-34e7d4cadb12/public_url" target="_blank">
+          <img alt="CCNP: Advanced Routing" src="./img/ccnp-advanced-routing.png"/>
+          <p>CCNP: Fortgeschrittenes Routing</p>
+        </a>
+      </div>
+    </div>
+  </section>
+<nav>
+  <ul>
+    <li><a href="index-es.html">🇨🇱 Español</a></li>
+    <li><a href="index-en.html">🇬🇧 English</a></li>
+    <li><a href="index-de.html">🇩🇪 Deutsch</a></li>
+    <li><a href="index-fr.html">🇫🇷 Français</a></li>
+  </ul>
+</nav>
+
+  <footer>
+    <p>&copy; 2025 José Cartagena</p>
+  </footer>
+</body>
+</html>
