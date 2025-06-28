@@ -4,7 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>José Cartagena - Portafolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eaeaea;
+      color: #222;
+    }
+
+    header, section, footer {
+      background-color: #fff;
+      margin: 30px auto;
+      padding: 30px 40px;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    p, li {
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .habilidades-contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .habilidades-contenedor > div {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .badge {
+      text-align: center;
+    }
+
+    .badge img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .badge img:hover {
+      transform: scale(1.05);
+    }
+
+    .badge p {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.95em;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -12,22 +94,22 @@
     <p>Ingeniero en Conectividad y Redes</p>
   </header>
 
-    <section class="section">
-      <h2><span class="emoji">📌</span>Sobre mí</h2>
-      <p>
-        Soy Ingeniero en Conectividad y Redes con interés en la ciberseguridad y la tecnología en general. Me apasiona entender cómo funcionan los sistemas, las redes y su seguridad, y me motiva aprender cosas nuevas cada día para mejorar mis habilidades y aportar soluciones efectivas en el área TI. Me considero una persona proactiva, con alta capacidad de adaptación y con ganas constantes de crecer profesionalmente.
-      </p>
-    </section>
+  <section class="section">
+    <h2><span class="emoji">📌</span>Sobre mí</h2>
+    <p>
+      Soy Ingeniero en Conectividad y Redes con interés en la ciberseguridad y la tecnología en general. Me apasiona entender cómo funcionan los sistemas, las redes y su seguridad, y me motiva aprender cosas nuevas cada día para mejorar mis habilidades y aportar soluciones efectivas en el área TI. Me considero una persona proactiva, con alta capacidad de adaptación y con ganas constantes de crecer profesionalmente.
+    </p>
+  </section>
 
-    <section class="section">
-      <h2><span class="emoji">🎯</span>Objetivo Profesional</h2>
-      <p>
-        Desarrollarme como profesional en el área de redes y ciberseguridad, aplicando mis conocimientos para implementar, administrar y proteger infraestructuras TI. Mi meta es integrarme a un equipo donde pueda seguir aprendiendo, asumir nuevos desafíos tecnológicos y contribuir a fortalecer la seguridad y eficiencia de los sistemas en la organización.
-      </p>
-    </section>
-  
+  <section class="section">
+    <h2><span class="emoji">🎯</span>Objetivo Profesional</h2>
+    <p>
+      Desarrollarme como profesional en el área de redes y ciberseguridad, aplicando mis conocimientos para implementar, administrar y proteger infraestructuras TI. Mi meta es integrarme a un equipo donde pueda seguir aprendiendo, asumir nuevos desafíos tecnológicos y contribuir a fortalecer la seguridad y eficiencia de los sistemas en la organización.
+    </p>
+  </section>
+
   <section class="educacion">
-    <h2>Educación</h2>
+    <h2>🎓 Educación</h2>
     <ul>
       <li><strong>Ingeniería en Conectividad y Redes</strong> (2021 - 2024) - DUOC UC</li>
       <li><strong>Técnico Nivel Superior en Farmacia</strong> (2015 - 2017) - INACAP</li>
@@ -35,7 +117,7 @@
   </section>
 
   <section class="habilidades">
-    <h2>Habilidades</h2>
+    <h2>🛠️ Habilidades</h2>
     <div class="habilidades-contenedor">
       <div class="tecnicas">
         <h3>⚙️ Habilidades Técnicas</h3>
@@ -63,15 +145,13 @@
       </div>
     </div>
   </section>
-  
 
   <section class="idiomas">
-    <h2>Idiomas</h2>
+    <h2>🌐 Idiomas</h2>
     <ul>
       <li>Español: Nativo </li>
       <li>Inglés: Intermedio </li>
     </ul>
-  </section>
   
 
   <section id="insignias">
