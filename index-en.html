@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>José Cartagena - Portfolio</title>
+  <title>José Cartagena – Portfolio</title>
   <style>
     body {
       margin: 0;
@@ -11,6 +11,73 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #eaeaea;
       color: #222;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-button {
+      background-color: #34495e;
+      color: #fff;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+      min-width: 160px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 1;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+      color: #2c3e50;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     header, section, footer {
@@ -89,45 +156,68 @@
   </style>
 </head>
 <body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-links">
+      <a href="#about-me">About Me</a>
+      <a href="#career-objective">Career Objective</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#languages">Languages</a>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-button">🌐 Language</button>
+      <div class="dropdown-content">
+        <a href="index-es.html">🇨🇱 Spanish</a>
+        <a href="index-en.html">🇬🇧 English</a>
+        <a href="index-de.html">🇩🇪 German</a>
+        <a href="index-fr.html">🇫🇷 French</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
   <header>
     <h1>José Ignacio Cartagena Medina</h1>
     <p>Engineer in Connectivity and Networks</p>
   </header>
 
-  <section class="section">
-    <h2><span class="emoji">📌</span>About Me</h2>
+  <!-- SECTIONS -->
+  <section id="about-me">
+    <h2>📌 About Me</h2>
     <p>
-      I am an Engineer in Connectivity and Networks with a strong interest in cybersecurity and technology in general. I'm passionate about understanding how systems, networks, and their security work, and I’m motivated to learn new things every day to improve my skills and provide effective solutions in the IT field. I consider myself proactive, highly adaptable, and constantly eager to grow professionally.
+      I am a Connectivity and Network Engineer with a strong interest in cybersecurity and technology in general. I am passionate about how systems, networks, and their security work, and I'm motivated to learn something new every day to improve my skills and provide effective IT solutions. I am proactive, highly adaptable, and constantly seeking to grow professionally.
     </p>
   </section>
 
-  <section class="section">
-    <h2><span class="emoji">🎯</span>Professional Objective</h2>
+  <section id="career-objective">
+    <h2>🎯 Career Objective</h2>
     <p>
-      To develop my career in the field of networking and cybersecurity, applying my knowledge to implement, manage, and protect IT infrastructures. My goal is to join a team where I can continue learning, take on new technological challenges, and contribute to enhancing the security and efficiency of organizational systems.
+      I aim to develop professionally in the areas of networking and cybersecurity, applying my knowledge to implement, manage, and secure IT infrastructures. My goal is to join a team where I can continue learning, take on new technological challenges, and contribute to the security and efficiency of the company's systems.
     </p>
   </section>
 
-  <section class="education">
+  <section id="education">
     <h2>🎓 Education</h2>
     <ul>
-      <li><strong>Engineering in Connectivity and Networks</strong> (2021 - 2024) - DUOC UC</li>
-      <li><strong>Higher Technician in Pharmacy</strong> (2015 - 2017) - INACAP</li>
+      <li><strong>Engineer in Connectivity and Networks</strong> (2021 – 2024) – DUOC UC</li>
+      <li><strong>Higher Technician in Pharmacy</strong> (2015 – 2017) – INACAP</li>
     </ul>
   </section>
 
-  <section class="skills">
+  <section id="skills">
     <h2>🛠️ Skills</h2>
     <div class="skills-container">
       <div class="technical">
         <h3>⚙️ Technical Skills</h3>
         <ul>
-          <li>LAN/WAN network administration</li>
+          <li>LAN/WAN network management</li>
           <li>Routing protocols (EIGRP, OSPF, BGP)</li>
-          <li>Network security (firewalls, ACLs, VPNs)</li>
-          <li>Cisco device configuration (routers and switches)</li>
+          <li>Network security (Firewalls, ACLs, VPNs)</li>
+          <li>Cisco device configuration (Routers and Switches)</li>
           <li>Linux and network operating systems</li>
-          <li>Network automation and basic scripting</li>
+          <li>Network automation and scripting</li>
           <li>Monitoring tools (Wireshark, Nmap)</li>
         </ul>
       </div>
@@ -136,7 +226,7 @@
         <ul>
           <li>Effective communication</li>
           <li>Adaptability</li>
-          <li>Decision making</li>
+          <li>Decision-making</li>
           <li>Time management</li>
           <li>Teamwork</li>
           <li>Strategic thinking</li>
@@ -145,21 +235,55 @@
       </div>
     </div>
   </section>
-  
-  <nav>
-  <ul>
-    <li><a href="index-es.html">🇨🇱 Español</a></li>
-    <li><a href="index-en.html">🇬🇧 English</a></li>
-    <li><a href="index-de.html">🇩🇪 Deutsch</a></li>
-    <li><a href="index-fr.html">🇫🇷 Français</a></li>
-  </ul>
-</nav>
 
-
-  <section class="languages">
+  <section id="languages">
     <h2>🌐 Languages</h2>
     <ul>
       <li>Spanish: Native</li>
       <li>English: Intermediate</li>
     </ul>
   </section>
+
+  <section id="badges">
+    <h2>🎖️ Badges & Achievements</h2>
+    <div class="badge-grid">
+      <div class="badge">
+        <a href="https://www.credly.com/badges/0f768e74-fdc1-4377-82bd-57985f0ce75b/public_url" target="_blank">
+          <img src="./img/ccna-switching-routing-and-wireless-essentials.1.png" alt="CCNA 1">
+          <p>CCNA: Switching, Routing, and Wireless Essentials</p>
+        </a>
+      </div>
+      <div class="badge">
+        <a href="https://www.credly.com/badges/47cfb20f-7986-46cd-b520-1332ae6326f0/public_url" target="_blank">
+          <img src="./img/ccna-enterprise-networking-security-and-automation.png" alt="CCNA 2">
+          <p>CCNA: Enterprise Networking, Security, and Automation</p>
+        </a>
+      </div>
+      <div class="badge">
+        <a href="https://www.credly.com/badges/e0903876-2f7f-4078-9ead-a9ce028033ee/public_url" target="_blank">
+          <img src="./img/ccna-enterprise-networking-security-and-automation.png" alt="CCNP Core">
+          <p>CCNP: Core Networking</p>
+        </a>
+      </div>
+      <div class="badge">
+        <a href="https://www.credly.com/badges/9f105464-2897-419e-a083-8575f595bf06/public_url" target="_blank">
+          <img src="./img/network-security.png" alt="Security">
+          <p>Network Security</p>
+        </a>
+      </div>
+      <div class="badge">
+        <a href="https://www.credly.com/badges/5d4ae9ba-10cb-4191-b5b5-34e7d4cadb12/public_url" target="_blank">
+          <img src="./img/ccnp-advanced-routing.png" alt="CCNP Advanced">
+          <p>CCNP: Advanced Routing</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 José Cartagena</p>
+  </footer>
+
+</body>
+</html>
+
