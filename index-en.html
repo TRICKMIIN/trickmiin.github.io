@@ -24,7 +24,7 @@
     nav ul {
       list-style: none;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       margin: 0;
       padding: 0;
@@ -71,6 +71,10 @@
 
     .dropdown:hover .dropdown-content {
       display: block;
+    }
+
+    .language-selector {
+      margin-left: auto;
     }
 
     header, section, footer {
@@ -138,21 +142,21 @@
   <!-- Navbar -->
   <nav>
     <ul>
-      <li class="dropdown">
-        <a href="#">🌐 Language</a>
-        <div class="dropdown-content">
-          <a href="index.html"> Spanish</a>
-          <a href="index-en.html"> English</a>
-          <a href="index-de.html"> German</a>
-          <a href="index-fr.html"> French</a>
-        </div>
-      </li>
       <li><a href="#about">About Me</a></li>
       <li><a href="#objective">Career Objective</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#languages">Languages</a></li>
       <li><a href="#badges">Badges & Achievements</a></li>
+      <li class="dropdown language-selector">
+        <a href="#">🌐 Language</a>
+        <div class="dropdown-content">
+          <a href="index.html">Spanish</a>
+          <a href="index-en.html">English</a>
+          <a href="index-de.html">German</a>
+          <a href="index-fr.html">French</a>
+        </div>
+      </li>
     </ul>
   </nav>
 
@@ -265,6 +269,7 @@
 
 </body>
 </html>
+
 
 
 
