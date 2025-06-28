@@ -44,4 +44,3 @@ Desarrollarme como profesional en el área de redes y ciberseguridad, aplicando 
 ![Network Security](https://www.credly.com/badges/9f105464-2897-419e-a083-8575f595bf06/public_url)
 
 
-# josecartagena.github.io
