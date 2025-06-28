@@ -86,12 +86,40 @@
       font-size: 0.9em;
       color: #777;
     }
+
+    /* Navbar styles */
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #2c3e50;
+      transition: color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      color: #0077cc;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>José Ignacio Cartagena Medina</h1>
     <p>Ingenieur für Konnektivität und Netzwerke</p>
+    <nav>
+      <ul>
+        <li><a href="index-es.html">🇨🇱 Español</a></li>
+        <li><a href="index-en.html">🇬🇧 English</a></li>
+        <li><a href="index-de.html">🇩🇪 Deutsch</a></li>
+        <li><a href="index-fr.html">🇫🇷 Français</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section class="section">
@@ -189,17 +217,10 @@
       </div>
     </div>
   </section>
-<nav>
-  <ul>
-    <li><a href="index-es.html">🇨🇱 Español</a></li>
-    <li><a href="index-en.html">🇬🇧 English</a></li>
-    <li><a href="index-de.html">🇩🇪 Deutsch</a></li>
-    <li><a href="index-fr.html">🇫🇷 Français</a></li>
-  </ul>
-</nav>
 
   <footer>
     <p>&copy; 2025 José Cartagena</p>
   </footer>
 </body>
 </html>
+
