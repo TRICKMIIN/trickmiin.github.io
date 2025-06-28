@@ -13,73 +13,6 @@
       color: #222;
     }
 
-    nav {
-      background-color: #2c3e50;
-      color: white;
-      padding: 10px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-button {
-      background-color: #34495e;
-      color: #fff;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      color: black;
-      min-width: 160px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      z-index: 1;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    .dropdown-content a {
-      padding: 10px 14px;
-      text-decoration: none;
-      display: block;
-      color: #2c3e50;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f0f0f0;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
     header, section, footer {
       background-color: #fff;
       margin: 30px auto;
@@ -153,56 +86,108 @@
       font-size: 0.9em;
       color: #777;
     }
+
+    /* Navbar Styles */
+    nav.navbar {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 0;
+      border-radius: 0 0 8px 8px;
+    }
+
+    nav.navbar ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav.navbar li {
+      margin: 0 15px;
+      position: relative;
+    }
+
+    nav.navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #2c3e50;
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="nav-links">
-      <a href="#about-me">About Me</a>
-      <a href="#career-objective">Career Objective</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#languages">Languages</a>
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">🌐 Language</button>
-      <div class="dropdown-content">
-        <a href="index-es.html">🇨🇱 Spanish</a>
-        <a href="index-en.html">🇬🇧 English</a>
-        <a href="index-de.html">🇩🇪 German</a>
-        <a href="index-fr.html">🇫🇷 French</a>
-      </div>
-    </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li class="dropdown">
+        <a href="#">🌐 Language</a>
+        <div class="dropdown-content">
+          <a href="index-es.html">🇨🇱 Español</a>
+          <a href="index-en.html">🇬🇧 English</a>
+          <a href="index-de.html">🇩🇪 Deutsch</a>
+          <a href="index-fr.html">🇫🇷 Français</a>
+        </div>
+      </li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#objective">Career Objective</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li><a href="#badges">Badges & Achievements</a></li>
+    </ul>
   </nav>
 
-  <!-- HEADER -->
   <header>
     <h1>José Ignacio Cartagena Medina</h1>
-    <p>Engineer in Connectivity and Networks</p>
+    <p>Network and Connectivity Engineer</p>
   </header>
 
-  <!-- SECTIONS -->
-  <section id="about-me">
+  <section id="about">
     <h2>📌 About Me</h2>
     <p>
-      I am a Connectivity and Network Engineer with a strong interest in cybersecurity and technology in general. I am passionate about how systems, networks, and their security work, and I'm motivated to learn something new every day to improve my skills and provide effective IT solutions. I am proactive, highly adaptable, and constantly seeking to grow professionally.
+      I am a Network and Connectivity Engineer with a strong interest in cybersecurity and technology in general. I am passionate about how systems, networks, and their security work. I am highly motivated to learn something new every day to improve my skills and deliver effective IT solutions. I consider myself proactive, adaptable, and constantly seeking professional growth.
     </p>
   </section>
 
-  <section id="career-objective">
+  <section id="objective">
     <h2>🎯 Career Objective</h2>
     <p>
-      I aim to develop professionally in the areas of networking and cybersecurity, applying my knowledge to implement, manage, and secure IT infrastructures. My goal is to join a team where I can continue learning, take on new technological challenges, and contribute to the security and efficiency of the company's systems.
+      I aim to grow professionally in the field of networking and cybersecurity, applying my knowledge to implement, manage, and secure IT infrastructures. My goal is to become part of a team where I can continue learning, face new technological challenges, and contribute to the security and efficiency of enterprise systems.
     </p>
   </section>
 
   <section id="education">
     <h2>🎓 Education</h2>
     <ul>
-      <li><strong>Engineer in Connectivity and Networks</strong> (2021 – 2024) – DUOC UC</li>
-      <li><strong>Higher Technician in Pharmacy</strong> (2015 – 2017) – INACAP</li>
+      <li><strong>Network and Connectivity Engineering</strong> (2021–2024) – DUOC UC</li>
+      <li><strong>Pharmaceutical Technician</strong> (2015–2017) – INACAP</li>
     </ul>
   </section>
 
@@ -215,9 +200,9 @@
           <li>LAN/WAN network management</li>
           <li>Routing protocols (EIGRP, OSPF, BGP)</li>
           <li>Network security (Firewalls, ACLs, VPNs)</li>
-          <li>Cisco device configuration (Routers and Switches)</li>
-          <li>Linux and network operating systems</li>
-          <li>Network automation and scripting</li>
+          <li>Cisco devices configuration (Routers & Switches)</li>
+          <li>Linux and network OS</li>
+          <li>Network automation and basic scripting</li>
           <li>Monitoring tools (Wireshark, Nmap)</li>
         </ul>
       </div>
@@ -286,4 +271,5 @@
 
 </body>
 </html>
+
 
