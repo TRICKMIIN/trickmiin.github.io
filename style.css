@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  header {
+    background: #1f2937;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  section {
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
+  a {
+    color: #1d4ed8;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #e5e7eb;
+    margin-top: 2rem;
+  }
+  .badge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .badge a {
+    text-decoration: none;
+  }
+
+  .badge img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    /* background-color: #161b22; */
+    padding: 0.5rem;
+    border: 1px solid #30363d;
+  }
+
+  .badge p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #8b949e;
+  }
