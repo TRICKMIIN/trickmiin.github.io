@@ -1,91 +1,141 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <!-- Balise Google -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TN7KK1K7SL"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-TN7KK1K7SL');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="NjhHLLyhoWJ5J-T6J-2BtGHxjlUmqf3SUOm6FRPrBcw" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#B97CF7">
-    <meta name="description" content="Rupendra Singh Rajawat | Portfolio. Découvrez mes projets et mon profil professionnel. J'apprécie les designs simples et les interactions soignées.">
-    <meta name="keywords" content="Rupendra Singh Rajawat, Portfolio, frontend developer, Jaipur, Imarticus, Investment Banker">
-    <meta name="author" content="Rupendra Singh Rajawat">
-    <meta property="og:image" content="https://rupendra20.github.io/Portfolio/images/joo.jpg">
-    <link rel="shortcut icon" href="RSR-LOGO-PNG.png" type="image/x-icon">
-    <title>Rupendra Singh | Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Passions+Conflict&family=Orbitron&family=Fira+Code&family=Six+Caps">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>José Cartagena – Portfolio</title>
+  <style>
+    body { margin:0; padding:0; font-family:'Segoe UI', sans-serif; background:#f4f4f4; color:#333; }
+    nav { background:#2c3e50; padding:12px 0; position:sticky; top:0; z-index:1000; }
+    nav ul { list-style:none; display:flex; justify-content:space-between; align-items:center; margin:0 auto; padding:0 20px; max-width:1200px; flex-wrap:wrap; }
+    nav .menu-items { display:flex; gap:20px; }
+    nav li { position:relative; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; font-size:1em; padding:8px; display:block; }
+    nav a:hover { text-decoration:underline; }
+    .dropdown-content { display:none; position:absolute; background:#fff; min-width:160px; box-shadow:0 4px 6px rgba(0,0,0,0.15); z-index:1; }
+    .dropdown-content a { color:#2c3e50; padding:10px 15px; text-decoration:none; display:block; }
+    .dropdown-content a:hover { background:#f2f2f2; }
+    .dropdown:hover .dropdown-content { display:block; }
+    .language-selector { margin-left:auto; }
+    header, section, footer { max-width:900px; background:#fff; margin:30px auto; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+    h1,h2,h3 { color:#2c3e50; margin-bottom:15px; }
+    ul { padding-left:20px; }
+    .skills-container { display:flex; flex-wrap:wrap; gap:30px; }
+    .skills-container > div { flex:1; min-width:300px; }
+    .badge-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:20px; }
+    .badge img { width:100%; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:transform 0.2s ease; }
+    .badge img:hover { transform:scale(1.05); }
+    .badge p { text-align:center; margin-top:10px; font-weight:bold; font-size:0.95em; }
+    footer { text-align:center; font-size:0.9em; color:#777; }
+  </style>
 </head>
-
 <body>
-    <header class="header">
-        <a href="#" class="logo"><img src="RSR-LOGO-PNG.png" alt="Logo"></a>
-        <div class="bx bx-menu" id="menu-icon"></div>
-        <nav class="navbar">
-            <a href="#home" class="active">Accueil</a>
-            <a href="#about">À propos</a>
-            <a href="#education">Éducation</a>
-            <a href="#skills">Compétences</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
 
-    <section class="home" id="home">
-        <div class="home-content">
-            <h1><span class="kello">Bonjour, je suis</span> <span class="gradient-animation">Rupendra Singh</span></h1>
-            <div class="text-animate">
-                <h3>Banquier d'investissement</h3>
-            </div>
-            <p>
-                Je suis un banquier d'investissement certifié spécialisé dans les opérations de back-office, avec une solide formation en informatique pour renforcer les stratégies financières.
-            </p>
-            <div class="btn-box">
-                <a href="mailto:ENQUIRIES4RUPENDRASINGH@GMAIL.COM" class="btn">Embauchez-moi</a>
-                <a href="RupendraResume.pdf" class="btn">Mon CV</a>
-            </div>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <div class="menu-items">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#objective">Objectif Professionnel</a></li>
+        <li><a href="#education">Éducation</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#languages">Langues</a></li>
+        <li><a href="#badges">Badges & Réalisations</a></li>
+      </div>
+      <li class="dropdown language-selector">
+        <a href="#">🌐 Langue</a>
+        <div class="dropdown-content">
+          <a href="index-es.html">Espagnol</a>
+          <a href="index-en.html">Anglais</a>
+          <a href="index-de.html">Allemand</a>
+          <a href="index-fr.html">Français</a>
         </div>
-    </section>
+      </li>
+    </ul>
+  </nav>
 
-    <section class="about" id="about">
-        <h2 class="heading"><span>À propos</span> <span>de moi</span></h2>
-        <div class="about-img">
-            <img src="images/joo.jpg" alt="Photo de Rupendra Singh">
-        </div>
-        <div class="about-content">
-            <h3>Banquier d'investissement</h3>
-            <p>
-                Diplômé en Banque d'Investissement chez Imarticus, spécialisé en conformité AML/KYC, gestion du cycle de vie des opérations, modélisation financière et analyse de données. Motivé par l'excellence technique et les stratégies financières innovantes.
-            </p>
-        </div>
-    </section>
+  <!-- Header -->
+  <header>
+    <h1>José Ignacio Cartagena Medina</h1>
+    <p>Ingénieur en connectivité et réseaux</p>
+  </header>
 
-    <section class="education" id="education">
-        <h2 class="heading">Mon <span>Parcours</span></h2>
-        <!-- Traduis ici la partie "éducation" et "expérience" selon le même style que ci-dessus. -->
-    </section>
+  <section id="about">
+    <h2>📌 À propos</h2>
+    <p>
+      Je suis ingénieur en connectivité et réseaux avec un fort intérêt pour la cybersécurité et la technologie. Passionné par le fonctionnement des systèmes et des réseaux, je reste motivé à apprendre quotidiennement pour améliorer mes compétences et offrir des solutions IT efficaces. Proactif, adaptable et en quête constante d’évolution professionnelle.
+    </p>
+  </section>
 
-    <section class="skills" id="skills">
-        <h2 class="heading">Mes <span>Compétences</span></h2>
-        <!-- Traduire les compétences : HTML -> 90%, CSS, etc. comme déjà fait -->
-    </section>
+  <section id="objective">
+    <h2>🎯 Objectif Professionnel</h2>
+    <p>
+      Mon objectif est de progresser professionnellement dans le domaine des réseaux et de la cybersécurité, en mettant à profit mes connaissances pour déployer, gérer et sécuriser les infrastructures IT. Je souhaite intégrer une équipe où je pourrai continuer à apprendre, relever de nouveaux défis et contribuer à la sécurité et l’efficacité des systèmes.
+    </p>
+  </section>
 
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading">Derniers <span>Projets</span></h2>
-        <!-- Traduire chaque projet, par exemple: Netflix Clone -> Clone de Netflix -->
-    </section>
+  <section id="education">
+    <h2>🎓 Éducation</h2>
+    <ul>
+      <li><strong>Ingénieur en connectivité et réseaux</strong> (2021–2024) – DUOC UC</li>
+      <li><strong>Technicien en pharmacie</strong> (2015–2017) – INACAP</li>
+    </ul>
+  </section>
 
-    <!-- Ajoute ici la section contact traduite -->
+  <section id="skills">
+    <h2>🛠️ Compétences</h2>
+    <div class="skills-container">
+      <div>
+        <h3>⚙️ Compétences Techniques</h3>
+        <ul>
+          <li>Gestion de réseaux LAN/WAN</li>
+          <li>Protocoles de routage (EIGRP, OSPF, BGP)</li>
+          <li>Sécurité réseau (pare-feu, ACL, VPN)</li>
+          <li>Configuration de dispositifs Cisco (routeurs, switches)</li>
+          <li>Linux et OS réseau</li>
+          <li>Automatisation réseau et scripts basiques</li>
+          <li>Outils de surveillance (Wireshark, Nmap)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>🧠 Compétences Personnelles</h3>
+        <ul>
+          <li>Communication efficace</li>
+          <li>Adaptabilité</li>
+          <li>Prise de décision</li>
+          <li>Gestion du temps</li>
+          <li>Travail en équipe</li>
+          <li>Esprit stratégique</li>
+          <li>Leadership</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="languages">
+    <h2>🌐 Langues</h2>
+    <ul>
+      <li>Espagnol : Natif</li>
+      <li>Anglais : Intermédiaire</li>
+    </ul>
+  </section>
+
+  <section id="badges">
+    <h2>🎖️ Badges & Réalisations</h2>
+    <div class="badge-grid">
+      <div class="badge">
+        <a href="#" target="_blank">
+          <img src="./img/ccna-switching-routing-and-wireless-essentials.1.png" alt="CCNA">
+          <p>CCNA : Switching, Routing & Wireless Essentials</p>
+        </a>
+      </div>
+      <!-- Añade más insignias según tu contenido -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 José Cartagena</p>
+  </footer>
+
 </body>
-
 </html>
