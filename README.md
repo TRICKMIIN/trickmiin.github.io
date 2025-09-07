@@ -45,3 +45,4 @@ Desarrollarme como profesional en el área de redes y ciberseguridad, aplicando 
 
 [![Diploma Fundación Telefónica](./certificados/diploma_ft.png)](./certificados/diploma_ft.pdf)
 
+[![Diploma Fundación Telefónica - Ciberseguridad](./certificados/diploma_ft.png)](./certificados/diploma_ft.pdf)
