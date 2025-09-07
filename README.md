@@ -46,7 +46,9 @@ Desarrollarme como profesional en el área de redes y ciberseguridad, aplicando 
 
 ## 📜 Certificados
 
-[![Diploma Fundación Telefónica](./certificados/diploma_ft.png)](./certificados/diploma_ft.pdf)
+<a href="./certificados/diploma_ft.pdf" target="_blank">
+  <img src="./certificados/diploma_ft.png" alt="Diploma Fundación Telefónica" width="400">
+</a>
 
 [Coursera - Google IT Security Specialization](https://www.coursera.org/account/accomplishments/specialization/6RHVWYNJE3B5)  
 
