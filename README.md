@@ -43,7 +43,6 @@ Desarrollarme como profesional en el área de redes y ciberseguridad, aplicando 
 
 ![Network Security](https://www.credly.com/badges/9f105464-2897-419e-a083-8575f595bf06/public_url)
 
-[![Diploma Fundación Telefónica](./certificados/diploma_ft.png)](./certificados/diploma_ft.pdf)
 
 ## 📜 Certificados
 
@@ -56,6 +55,7 @@ Desarrollarme como profesional en el área de redes y ciberseguridad, aplicando 
 [Coursera - Certificate 2](https://www.coursera.org/account/accomplishments/verify/AYCILZRZTGBE)  
 
 [Coursera - Certificate 3](https://www.coursera.org/account/accomplishments/verify/AB0A54IDWEFZ)
+
 
 
 
