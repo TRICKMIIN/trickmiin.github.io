@@ -45,16 +45,18 @@ Desarrollarme como profesional en el área de redes y ciberseguridad, aplicando 
 
 [![Diploma Fundación Telefónica](./certificados/diploma_ft.png)](./certificados/diploma_ft.pdf)
 
-<section id="certificados">
-  <h2>📜 Certificados</h2>
-  <a href="/certificados/diploma_ft.pdf" target="_blank" rel="noopener">
-    <img src="/certificados/diploma_ft.png" alt="Diploma Fundación Telefónica - Ciberseguridad" style="max-width: 420px; width:100%; height:auto; border-radius:12px;">
-  </a>
-  <p>
-    Fundación Telefónica Movistar & SENCE — <em>Ciberseguridad en entornos de aprendizajes digitales</em>.
-    <a href="/certificados/diploma_ft.pdf" target="_blank" rel="noopener">Ver PDF</a>
-  </p>
-</section>
+## 📜 Certificados
+
+[![Diploma Fundación Telefónica](./certificados/diploma_ft.png)](./certificados/diploma_ft.pdf)
+
+[Coursera - Google IT Security Specialization](https://www.coursera.org/account/accomplishments/specialization/6RHVWYNJE3B5)  
+
+[Coursera - Certificate 1](https://www.coursera.org/account/accomplishments/verify/5OQ9VUO0SGSP)  
+
+[Coursera - Certificate 2](https://www.coursera.org/account/accomplishments/verify/AYCILZRZTGBE)  
+
+[Coursera - Certificate 3](https://www.coursera.org/account/accomplishments/verify/AB0A54IDWEFZ)
+
 
 
 
