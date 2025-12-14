@@ -1,277 +1,879 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>José Cartagena – Portafolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>José Ignacio Cartagena | Infrastructure & Systems Engineer</title>
+  <meta name="description" content="Portafolio profesional orientado a Infraestructura: virtualización, redes, servidores, monitoreo y respaldos." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+    :root{
+      /* Palette (professional, infra-oriented) */
+      --bg: #0B1220;          /* deep navy */
+      --bg-2: #0F1A2F;        /* elevated surface */
+      --card: rgba(255,255,255,.04);
+      --card-2: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.10);
+      --border-2: rgba(255,255,255,.14);
+
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --muted-2: rgba(255,255,255,.56);
+
+      --accent: #4F8CFF;      /* infrastructure blue */
+      --accent-2: #22C55E;    /* status/ops green */
+      --warning: #F59E0B;     /* amber */
+      --danger: #EF4444;      /* red */
+
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
+      --shadow-soft: 0 10px 26px rgba(0,0,0,.28);
+      --radius-xl: 18px;
+      --radius-lg: 14px;
+      --radius-md: 12px;
+
+      --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
     }
 
-    nav {
-      background-color: #2c3e50;
-      padding: 12px 0;
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(79,140,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 20%, rgba(34,197,94,.14), transparent 55%),
+        radial-gradient(1200px 800px at 50% 115%, rgba(255,255,255,.06), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, #070B14 100%);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--text); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container{
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Navbar */
+    .nav{
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(11,18,32,.68);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .brand-badge{
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(79,140,255,.25), rgba(34,197,94,.18));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      place-items: center;
+    }
+    .brand-badge span{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: rgba(255,255,255,.85);
+    }
+    .nav-links{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-links a{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 10px;
+      transition: background .18s ease, color .18s ease, border .18s ease;
+      border: 1px solid transparent;
+    }
+    .nav-links a:hover{
+      color: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-cta{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.90);
+      font-weight: 600;
+      font-size: 13px;
+      transition: transform .18s ease, background .18s ease, border .18s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(79,140,255,.26), rgba(79,140,255,.10));
+      border: 1px solid rgba(79,140,255,.35);
+    }
+    .btn-primary:hover{
+      background: linear-gradient(135deg, rgba(79,140,255,.32), rgba(79,140,255,.12));
+      border: 1px solid rgba(79,140,255,.45);
     }
 
-    nav ul {
-      list-style: none;
+    /* Hero */
+    .hero{
+      padding: 62px 0 26px;
+    }
+    .hero-grid{
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 22px;
+      align-items: start;
+    }
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(600px 250px at 20% 0%, rgba(79,140,255,.18), transparent 55%),
+                  radial-gradient(520px 220px at 85% 15%, rgba(34,197,94,.16), transparent 55%);
+      pointer-events:none;
+    }
+    .hero-card > * { position: relative; }
+
+    .kicker{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: rgba(255,255,255,.70);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+    .subtitle{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 64ch;
+    }
+
+    .pill-row{
       display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 18px;
+    }
+    .pill{
+      font-size: 12px;
+      color: rgba(255,255,255,.84);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 7px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .dot{
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(79,140,255,.8);
+      box-shadow: 0 0 0 4px rgba(79,140,255,.18);
+    }
+    .dot.green{ background: rgba(34,197,94,.9); box-shadow: 0 0 0 4px rgba(34,197,94,.18); }
+    .dot.amber{ background: rgba(245,158,11,.9); box-shadow: 0 0 0 4px rgba(245,158,11,.18); }
+
+    .hero-actions{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    /* Side card */
+    .side-card{
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius-xl);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+    }
+    .side-title{
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+    .side-list{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .side-item{
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .chip{
+      font-family: var(--mono);
+      font-size: 11px;
+      color: rgba(255,255,255,.80);
+      background: rgba(79,140,255,.12);
+      border: 1px solid rgba(79,140,255,.20);
+      padding: 4px 8px;
+      border-radius: 999px;
+      flex: 0 0 auto;
+    }
+
+    /* Sections */
+    section{ padding: 44px 0; }
+    .section-header{
+      display:flex;
+      align-items:flex-end;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .section-header h2{
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+    .section-header p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 70ch;
+    }
+
+    /* Cards grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 6;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, border .18s ease, background .18s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+    }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .card p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .card .meta{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .tag{
+      font-size: 11px;
+      color: rgba(255,255,255,.82);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-family: var(--mono);
+    }
+    .tag.blue{ border-color: rgba(79,140,255,.25); background: rgba(79,140,255,.10); }
+    .tag.green{ border-color: rgba(34,197,94,.25); background: rgba(34,197,94,.10); }
+    .tag.amber{ border-color: rgba(245,158,11,.25); background: rgba(245,158,11,.10); }
+
+    .card-actions{
+      margin-top: 14px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .card.small { grid-column: span 4; }
+    @media (max-width: 920px){
+      .card, .card.small { grid-column: span 12; }
+    }
+
+    /* Badges */
+    .badge-grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .badge{
+      grid-column: span 4;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius-xl);
+      padding: 14px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, border .18s ease, background .18s ease;
+      overflow: hidden;
+    }
+    .badge:hover{
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+    }
+    .badge a{
+      display:flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .badge img{
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 6px;
+    }
+    .badge p{
+      margin: 0;
+      color: rgba(255,255,255,.86);
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+    .badge small{
+      display:block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 12px;
+    }
+    @media (max-width: 920px){
+      .badge{ grid-column: span 12; }
+    }
+
+    /* Skills */
+    .skills{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .skill-col{
+      grid-column: span 6;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+    @media (max-width: 920px){
+      .skill-col{ grid-column: span 12; }
+    }
+    .skill-col h3{
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,.88);
+    }
+    .skill-list{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display:grid;
+      gap: 10px;
+    }
+    .skill{
+      display:flex;
       justify-content: space-between;
       align-items: center;
-      margin: 0 auto;
-      padding: 0 20px;
-      max-width: 1200px;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .level{
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.80);
+    }
+
+    /* Footer */
+    footer{
+      padding: 34px 0 50px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footer-grid{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
-    nav .menu-items {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav li {
-      position: relative;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1em;
-      padding: 8px;
-      display: block;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: #2c3e50;
-      padding: 10px 15px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f2f2f2;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    header, section, footer {
-      max-width: 900px;
-      background: white;
-      margin: 30px auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    h1, h2, h3 {
-      color: #2c3e50;
-      margin-bottom: 15px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .skills-container > div {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .badge-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px;
-    }
-
-    .badge img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-
-    .badge img:hover {
-      transform: scale(1.05);
-    }
-
-    .badge p {
-      text-align: center;
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 0.95em;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #777;
+    /* Utilities */
+    .muted { color: var(--muted); }
+    .mono { font-family: var(--mono); }
+    .divider{
+      height: 1px;
+      background: rgba(255,255,255,.08);
+      margin: 18px 0;
     }
   </style>
 </head>
+
 <body>
-
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <div class="menu-items">
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#objective">Objetivo Profesional</a></li>
-        <li><a href="#education">Educación</a></li>
-        <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#languages">Idiomas</a></li>
-        <li><a href="#badges">Insignias y Logros</a></li>
-      </div>
-      <li class="dropdown">
-        <a href="#"> Idiomas</a>
-        <div class="dropdown-content">      
-          <a href="index-en.html">Inglés</a>
-          <a href="index-de.html">Alemán</a>
-          <a href="index-fr.html">Francés</a>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="brand-badge"><span>INFRA</span></div>
+          <div>
+            <div style="font-size:13px; font-weight:700;">José Ignacio Cartagena</div>
+            <div style="font-size:12px; color: var(--muted);">Infrastructure & Systems</div>
+          </div>
         </div>
-      </li>
-    </ul>
-  </nav>
 
-  <!-- Header -->
-  <header>
-    <h1>José Ignacio Cartagena Medina</h1>
-    <p>Ingeniero en Conectividad y Redes</p>
-  </header>
+        <nav class="nav-links" aria-label="Secciones">
+          <a href="#projects">Proyectos</a>
+          <a href="#skills">Competencias</a>
+          <a href="#badges">Insignias</a>
+          <a href="#contact">Contacto</a>
+        </nav>
 
-  <!-- Sections -->
-  <section id="about">
-    <h2>📌 Sobre mí</h2>
-    <p>
-      Soy un Ingeniero en Conectividad y Redes con un gran interés en la ciberseguridad y la tecnología en general. Me apasiona cómo funcionan los sistemas, redes y su seguridad. Estoy altamente motivado por aprender algo nuevo cada día para mejorar mis habilidades y entregar soluciones IT efectivas. Me considero proactivo, adaptable y en constante búsqueda de crecimiento profesional.
-    </p>
-  </section>
-
-  <section id="objective">
-    <h2>🎯 Objetivo Profesional</h2>
-    <p>
-      Mi objetivo es crecer profesionalmente en el área de redes y ciberseguridad, aplicando mis conocimientos para implementar, gestionar y asegurar infraestructuras IT. Busco ser parte de un equipo donde pueda seguir aprendiendo, enfrentar nuevos desafíos tecnológicos y contribuir a la seguridad y eficiencia de los sistemas empresariales.
-    </p>
-  </section>
-
-  <section id="education">
-    <h2>🎓 Educación</h2>
-    <ul>
-      <li><strong>Ingeniería en Conectividad y Redes</strong> (2021–2024) – DUOC UC</li>
-      <li><strong>Técnico en Farmacia</strong> (2015–2017) – INACAP</li>
-    </ul>
-  </section>
-
-  <section id="skills">
-    <h2>🛠️ Habilidades</h2>
-    <div class="skills-container">
-      <div class="technical">
-        <h3>⚙️ Habilidades Técnicas</h3>
-        <ul>
-          <li>Gestión de redes LAN/WAN</li>
-          <li>Protocolos de enrutamiento (EIGRP, OSPF, BGP)</li>
-          <li>Seguridad de redes (Firewalls, ACLs, VPNs)</li>
-          <li>Configuración de dispositivos Cisco (Routers y Switches)</li>
-          <li>Linux y sistemas operativos de red</li>
-          <li>Automatización de redes y scripting básico</li>
-          <li>Herramientas de monitoreo (Wireshark, Nmap)</li>
-          <li>Infraestructura de red (Nakivo, Zabbix, Wordpress)</li>
-          <li>software de virtualización (Proxmox, VMware)</li>
-        </ul>
-      </div>
-      <div class="soft">
-        <h3>🧠 Habilidades Blandas</h3>
-        <ul>
-          <li>Comunicación efectiva</li>
-          <li>Adaptabilidad</li>
-          <li>Toma de decisiones</li>
-          <li>Gestión del tiempo</li>
-          <li>Trabajo en equipo</li>
-          <li>Pensamiento estratégico</li>
-          <li>Liderazgo</li>
-        </ul>
+        <div class="nav-cta">
+          <!-- Reemplaza con tu CV -->
+          <!-- <a class="btn" href="./cv.pdf" target="_blank" rel="noopener">Descargar CV</a> -->
+          <!-- Reemplaza con tu LinkedIn -->
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/jos%C3%A9-ignacio-cartagena-medina-a998b8215/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section id="languages">
-    <h2>🌐 Idiomas</h2>
-    <ul>
-      <li>Español: Nativo</li>
-      <li>Inglés: Intermedio</li>
-    </ul>
-  </section>
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <p class="kicker">Infraestructura · Redes · Operación</p>
+            <h1>Infrastructure & Systems Engineer enfocado en operación, estabilidad y continuidad.</h1>
+            <p class="subtitle">
+              Ingeniería en Conectividad y Redes con experiencia práctica en virtualización (VMware/Proxmox),
+              servidores Linux/Windows, monitoreo (Zabbix) y respaldos (Nakivo). Orientado a entornos productivos,
+              troubleshooting y documentación operativa.
+            </p>
 
-  <section id="badges">
-    <h2>🎖️ Insignias y Logros</h2>
-    <div class="badge-grid">
-      <div class="badge">
-        <a href="https://www.credly.com/badges/0f768e74-fdc1-4377-82bd-57985f0ce75b/public_url" target="_blank">
-          <img src="./img/ccna-switching-routing-and-wireless-essentials.1.png" alt="CCNA 1">
-          <p>CCNA: Switching, Routing and Wireless Essentials</p>
-        </a>
+            <div class="pill-row" aria-label="Highlights">
+              <span class="pill"><span class="dot"></span> Virtualización: Proxmox · VMware</span>
+              <span class="pill"><span class="dot green"></span> Monitoreo: Zabbix</span>
+              <span class="pill"><span class="dot amber"></span> Backups: Nakivo</span>
+              <span class="pill"><span class="dot"></span> Linux · Windows Server</span>
+              <span class="pill"><span class="dot"></span> Networking: CCNA/CCNP</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">Ver proyectos</a>
+              <a class="btn" href="#contact">Contactar</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <div style="display:flex; gap:14px; flex-wrap:wrap;">
+              <div class="pill"><span class="mono">Ubicación</span>: Chile</div>
+              <div class="pill"><span class="mono">Disponibilidad</span>: Full-time / Turnos</div>
+              <div class="pill"><span class="mono">Foco</span>: Infra, NOC, SysAdmin</div>
+            </div>
+          </div>
+
+          <aside class="side-card">
+            <p class="side-title">Perfil operativo</p>
+            <ul class="side-list">
+              <li class="side-item">
+                <span class="chip">OPS</span>
+                <span>Experiencia en soporte N2, levantamiento de servidores y continuidad de servicios.</span>
+              </li>
+              <li class="side-item">
+                <span class="chip" style="background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.22);">BCP</span>
+                <span>Enfoque en respaldos, restauración y reducción de tiempo de caída.</span>
+              </li>
+              <li class="side-item">
+                <span class="chip" style="background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.22);">DOC</span>
+                <span>Documentación técnica, diagramas y procedimientos operativos reproducibles.</span>
+              </li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <p class="side-title">Stack principal</p>
+            <ul class="side-list">
+              <li class="side-item"><span class="chip">VIRT</span> Proxmox · VMware</li>
+              <li class="side-item"><span class="chip">SYS</span> Linux · Windows Server</li>
+              <li class="side-item"><span class="chip">NET</span> VLANs · Routing · Switching</li>
+              <li class="side-item"><span class="chip">MON</span> Zabbix</li>
+              <li class="side-item"><span class="chip">BKP</span> Nakivo</li>
+            </ul>
+          </aside>
+        </div>
       </div>
-      <div class="badge">
-        <a href="https://www.credly.com/badges/47cfb20f-7986-46cd-b520-1332ae6326f0/public_url" target="_blank">
-          <img src="./img/ccna-enterprise-networking-security-and-automation.png" alt="CCNA 2">
-          <p>CCNA: Enterprise Networking, Security and Automation</p>
-        </a>
-      </div>
-      <div class="badge">
-        <a href="https://www.credly.com/badges/e0903876-2f7f-4078-9ead-a9ce028033ee/public_url" target="_blank">
-          <img src="./img/ccna-enterprise-networking-security-and-automation.png" alt="CCNP Core">
-          <p>CCNP: Core Networking</p>
-        </a>
-      </div>
-      <div class="badge">
-        <a href="https://www.credly.com/badges/9f105464-2897-419e-a083-8575f595bf06/public_url" target="_blank">
-          <img src="./img/network-security.png" alt="Security">
-          <p>Seguridad de Redes</p>
-        </a>
-      </div>
-      <div class="badge">
-        <a href="https://www.credly.com/badges/5d4ae9ba-10cb-4191-b5b5-34e7d4cadb12/public_url" target="_blank">
-          <img src="./img/ccnp-advanced-routing.png" alt="CCNP Avanzado">
-          <p>CCNP: Enrutamiento Avanzado</p>
-        </a>
-      </div>
-       </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Proyectos (Infraestructura)</h2>
+            <p>Proyectos diseñados para demostrar operación real: arquitectura, implementación, evidencias y lecciones aprendidas.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <!-- Project 1 -->
+          <article class="card">
+            <h3>Laboratorio de Infraestructura Virtualizada (Proxmox)</h3>
+            <p>
+              Implementación de entorno virtualizado con múltiples VMs, segmentación de red, snapshots, clonado y
+              hardening básico. Enfoque en operación y reproducibilidad.
+            </p>
+            <div class="meta">
+              <span class="tag blue">Proxmox</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Windows Server</span>
+              <span class="tag green">OPS</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Repositorio</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">Documentación</a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card">
+            <h3>Monitoreo Proactivo con Zabbix</h3>
+            <p>
+              Zabbix Server + Agents (Linux/Windows), dashboards, triggers y alertas.
+              Incluye simulación de incidentes y flujo de resolución.
+            </p>
+            <div class="meta">
+              <span class="tag green">Zabbix</span>
+              <span class="tag">Alerting</span>
+              <span class="tag">Dashboards</span>
+              <span class="tag amber">Incident</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Repositorio</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">Playbook</a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card">
+            <h3>Estrategia de Backups y Recuperación (Nakivo)</h3>
+            <p>
+              Diseño de política de respaldos (full/incremental), jobs automatizados,
+              pruebas de restauración y documentación de RPO/RTO.
+            </p>
+            <div class="meta">
+              <span class="tag amber">Nakivo</span>
+              <span class="tag">RPO/RTO</span>
+              <span class="tag">Restore Test</span>
+              <span class="tag green">Continuidad</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Repositorio</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">Informe</a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="card">
+            <h3>Diseño de Red Empresarial (VLANs & Routing)</h3>
+            <p>
+              Segmentación por roles, direccionamiento, routing inter-VLAN, reglas base y pruebas de conectividad.
+              Implementación en simulador (Packet Tracer/GNS3).
+            </p>
+            <div class="meta">
+              <span class="tag blue">CCNA/CCNP</span>
+              <span class="tag">VLANs</span>
+              <span class="tag">Routing</span>
+              <span class="tag">Topología</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Repositorio</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">Diagrama</a>
+            </div>
+          </article>
+
+          <!-- Project 5 (optional placeholder) -->
+          <article class="card small">
+            <h3>Active Directory Básico</h3>
+            <p>Dominio, usuarios/grupos, GPOs base y unión de equipos. Enfoque en operación.</p>
+            <div class="meta">
+              <span class="tag">Windows Server</span>
+              <span class="tag">AD DS</span>
+              <span class="tag green">Ops</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Repositorio</a>
+            </div>
+          </article>
+
+          <!-- Project 6 (optional placeholder) -->
+          <article class="card small">
+            <h3>Documentación Operativa</h3>
+            <p>Runbooks, checklist de mantenimiento, registros de cambios y plan de recuperación.</p>
+            <div class="meta">
+              <span class="tag">Runbooks</span>
+              <span class="tag amber">BCP</span>
+              <span class="tag">SOP</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Repositorio</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Competencias técnicas</h2>
+            <p>Stack orientado a Infraestructura, Operación y Continuidad.</p>
+          </div>
+        </div>
+
+        <div class="skills">
+          <div class="skill-col">
+            <h3>Infraestructura & Sistemas</h3>
+            <ul class="skill-list">
+              <li class="skill"><span>Proxmox VE</span><span class="level">Avanzado</span></li>
+              <li class="skill"><span>VMware (vSphere/ESXi)</span><span class="level">Intermedio</span></li>
+              <li class="skill"><span>Linux Server</span><span class="level">Intermedio</span></li>
+              <li class="skill"><span>Windows Server</span><span class="level">Intermedio</span></li>
+              <li class="skill"><span>Backups (Nakivo)</span><span class="level">Intermedio</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-col">
+            <h3>Redes & Operación</h3>
+            <ul class="skill-list">
+              <li class="skill"><span>Switching & Routing</span><span class="level">Avanzado</span></li>
+              <li class="skill"><span>VLANs / Segmentación</span><span class="level">Avanzado</span></li>
+              <li class="skill"><span>Monitoreo (Zabbix)</span><span class="level">Intermedio</span></li>
+              <li class="skill"><span>Documentación (Runbooks)</span><span class="level">Intermedio</span></li>
+              <li class="skill"><span>WordPress (admin)</span><span class="level">Intermedio</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BADGES (provided by you) -->
+    <section id="badges">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Insignias y Logros</h2>
+            <p>Insignias verificables para respaldar competencias en redes y seguridad.</p>
+          </div>
+        </div>
+
+        <div class="badge-grid">
+          <div class="badge">
+            <a href="https://www.credly.com/badges/0f768e74-fdc1-4377-82bd-57985f0ce75b/public_url" target="_blank" rel="noopener">
+              <img src="./img/ccna-switching-routing-and-wireless-essentials.1.png" alt="CCNA 1">
+              <div>
+                <p>CCNA: Switching, Routing and Wireless Essentials</p>
+                <small>Verificación en Credly</small>
+              </div>
+            </a>
+          </div>
+
+          <div class="badge">
+            <a href="https://www.credly.com/badges/47cfb20f-7986-46cd-b520-1332ae6326f0/public_url" target="_blank" rel="noopener">
+              <img src="./img/ccna-enterprise-networking-security-and-automation.png" alt="CCNA 2">
+              <div>
+                <p>CCNA: Enterprise Networking, Security and Automation</p>
+                <small>Verificación en Credly</small>
+              </div>
+            </a>
+          </div>
+
+          <div class="badge">
+            <a href="https://www.credly.com/badges/e0903876-2f7f-4078-9ead-a9ce028033ee/public_url" target="_blank" rel="noopener">
+              <img src="./img/ccna-enterprise-networking-security-and-automation.png" alt="CCNP Core">
+              <div>
+                <p>CCNP: Core Networking</p>
+                <small>Verificación en Credly</small>
+              </div>
+            </a>
+          </div>
+
+          <div class="badge">
+            <a href="https://www.credly.com/badges/9f105464-2897-419e-a083-8575f595bf06/public_url" target="_blank" rel="noopener">
+              <img src="./img/network-security.png" alt="Security">
+              <div>
+                <p>Seguridad de Redes</p>
+                <small>Verificación en Credly</small>
+              </div>
+            </a>
+          </div>
+
+          <div class="badge">
+            <a href="https://www.credly.com/badges/5d4ae9ba-10cb-4191-b5b5-34e7d4cadb12/public_url" target="_blank" rel="noopener">
+              <img src="./img/ccnp-advanced-routing.png" alt="CCNP Avanzado">
+              <div>
+                <p>CCNP: Enrutamiento Avanzado</p>
+                <small>Verificación en Credly</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Contacto</h2>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Datos</h3>
+            <div class="meta">
+              <span class="tag">📍 Chile</span>
+              <span class="tag">🕘 Turnos / Full-time</span>
+              <span class="tag">💼 Infra / NOC / SysAdmin</span>
+            </div>
+            <div class="card-actions" style="margin-top:16px;">
+              <a class="btn btn-primary" href="mailto:jcartagena708@gmail.com">jcartagena708@gmail.com</a>
+              <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Notas para reclutadores</h3>
+            <p>
+              Portafolio orientado a infraestructura: cada proyecto incluye arquitectura, pasos de implementación,
+              evidencias (capturas) y procedimientos (runbooks) para operación y troubleshooting.
+            </p>
+            <div class="meta">
+              <span class="tag green">Operación</span>
+              <span class="tag amber">Continuidad</span>
+              <span class="tag blue">Infra</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; 2025 José Cartagena</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color: rgba(255,255,255,.86);">José Ignacio Cartagena</strong>
+          <div class="muted">Infrastructure & Systems Engineer</div>
+        </div>
+        <div class="muted mono">Última actualización: <span id="lastUpdated"></span></div>
+      </div>
+    </div>
   </footer>
 
+  <script>
+    const d = new Date();
+    const months = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+    document.getElementById("lastUpdated").textContent =
+      `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  </script>
 </body>
 </html>
-
-
