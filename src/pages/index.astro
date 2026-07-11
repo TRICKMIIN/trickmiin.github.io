@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Skills from '../components/Skills.astro';
+import Education from '../components/Education.astro';
+import Certs from '../components/Certs.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout>
+  <Nav />
+  <main id="top">
+    <Hero />
+    <About />
+    <Experience />
+    <Skills />
+    <Education />
+    <Certs />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  // Reveal on scroll + rellenar barras de skills
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        e.target.querySelectorAll?.('.bar i').forEach((b) => {
+          (b as HTMLElement).style.width = (b.getAttribute('data-w') || '0') + '%';
+        });
+        io.unobserve(e.target);
+      });
+    },
+    { threshold: 0.15 }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  document.querySelectorAll('.skill-card').forEach((el) => io.observe(el));
+
+  // Contadores animados
+  const cio = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target as HTMLElement;
+        const target = Number(el.getAttribute('data-count'));
+        let cur = 0;
+        const step = Math.max(1, Math.round(target / 24));
+        const up = () => {
+          cur += step;
+          if (cur >= target) el.textContent = String(target);
+          else {
+            el.textContent = String(cur);
+            requestAnimationFrame(up);
+          }
+        };
+        up();
+        cio.unobserve(el);
+      });
+    },
+    { threshold: 0.4 }
+  );
+  document.querySelectorAll('[data-count]').forEach((el) => cio.observe(el));
+</script>

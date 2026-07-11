@@ -1,0 +1,24 @@
+---
+import { about } from '../data/site.js';
+---
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-tag">sobre_mi</p>
+      <h2>Perfil profesional</h2>
+    </div>
+    <div class="about-grid">
+      <div class="prose reveal">
+        {about.paragraphs.map((p) => <p set:html={p}></p>)}
+      </div>
+      <div class="facts">
+        {about.facts.map((f) => (
+          <div class={`fact reveal ${f.variant}`}>
+            <span class="badge-k">{f.k}</span>
+            <span class="t" set:html={f.text}></span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

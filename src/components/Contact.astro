@@ -1,0 +1,25 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/site.js';
+---
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div>
+        <p class="sec-tag">contacto</p>
+        <h2>¿Trabajamos juntos?</h2>
+        <p>Abierto a oportunidades en infraestructura, redes y ciberseguridad. Respuesta rápida por correo o LinkedIn.</p>
+        <a class="btn btn-primary" href={profile.cv} target="_blank" rel="noopener"><Icon name="download" />Descargar CV</a>
+      </div>
+      <div class="contact-list">
+        <a href={`mailto:${profile.email}`}><Icon name="mail" />{profile.email}</a>
+        <a href={`tel:${profile.phone}`}><Icon name="phone" />{profile.phonePretty}</a>
+        <a href={profile.linkedin} target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex:0 0 auto;color:var(--neon)"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V23h-4V8z"/></svg>
+          {profile.linkedinPretty}
+        </a>
+        <div><Icon name="pin" />{profile.location}</div>
+      </div>
+    </div>
+  </div>
+</section>

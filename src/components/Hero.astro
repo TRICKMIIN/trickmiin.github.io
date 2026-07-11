@@ -1,0 +1,90 @@
+---
+import Icon from './Icon.astro';
+import { profile, stats } from '../data/site.js';
+---
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="term reveal">
+          <div class="term-bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            jose@infosec: ~/portfolio
+          </div>
+          <div class="term-body">
+            <p class="term-line"><span class="p">jose@infosec</span>:<span class="c">~</span>$ whoami</p>
+            <p class="term-out">{profile.tagline}</p>
+
+            <h1>{profile.name}<br /><span class="grad">{profile.lastName}</span></h1>
+            <p class="role"><span id="roleText"></span><span class="cursor">&nbsp;</span></p>
+
+            <p class="hero-desc">{profile.heroDesc}</p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact"><Icon name="mail" />Contactar</a>
+              <a class="btn btn-ghost" href={profile.cv} target="_blank" rel="noopener"><Icon name="download" />Descargar CV</a>
+            </div>
+
+            <div class="socials">
+              <a class="soc" href={profile.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V23h-4V8z"/></svg>
+              </a>
+              <a class="soc" href={`mailto:${profile.email}`} aria-label="Email" title="Email"><Icon name="mail" /></a>
+              <a class="soc" href={`tel:${profile.phone}`} aria-label="Teléfono" title="Teléfono"><Icon name="phone" /></a>
+              <a class="soc" href={profile.website} target="_blank" rel="noopener" aria-label="Sitio web" title="Sitio web"><Icon name="globe" /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats">
+          {stats.map((s) => (
+            <div class="stat reveal"><b data-count={s.n}>0</b><span>{s.label}</span></div>
+          ))}
+        </div>
+      </div>
+
+      <aside class="id-card reveal">
+        <div class="id-row">
+          <span class="id-ico"><Icon name="pin" /></span>
+          <div><div class="k">Ubicación</div><div class="v">{profile.location}</div></div>
+        </div>
+        <div class="id-row">
+          <span class="id-ico"><Icon name="shield" /></span>
+          <div><div class="k">Enfoque</div><div class="v">{profile.focus}</div></div>
+        </div>
+        <div class="id-row">
+          <span class="id-ico"><Icon name="globe" /></span>
+          <div><div class="k">Idiomas</div><div class="v">{profile.languages}</div></div>
+        </div>
+        <div class="id-row">
+          <span class="id-ico"><Icon name="briefcase" /></span>
+          <div><div class="k">Disponibilidad</div><div class="v">{profile.availability}</div></div>
+        </div>
+        <div class="id-row" style="justify-content:center; padding-top:16px;">
+          <span class="status-live"><span class="pulse"></span> Disponible para nuevos proyectos</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { profile } from '../data/site.js';
+  const el = document.getElementById('roleText');
+  if (el) {
+    const roles = profile.roles;
+    let ri = 0, ci = 0, deleting = false;
+    const tick = () => {
+      const full = roles[ri];
+      el.textContent = full.slice(0, ci);
+      if (!deleting) {
+        if (ci < full.length) { ci++; setTimeout(tick, 55); }
+        else { deleting = true; setTimeout(tick, 1600); }
+      } else {
+        if (ci > 0) { ci--; setTimeout(tick, 28); }
+        else { deleting = false; ri = (ri + 1) % roles.length; setTimeout(tick, 350); }
+      }
+    };
+    tick();
+  }
+</script>

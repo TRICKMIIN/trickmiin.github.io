@@ -1,0 +1,40 @@
+---
+import Icon from './Icon.astro';
+import { ciscoBadges, cyberCerts, msLearn } from '../data/site.js';
+---
+<section id="certs">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-tag">credenciales</p>
+      <h2>Certificaciones &amp; insignias</h2>
+      <p>Credenciales verificables en redes (Cisco), ciberseguridad (U. de los Andes) y fundamentos de Azure AI (Microsoft).</p>
+    </div>
+
+    <p class="subhead">Cisco · Credly (verificable)</p>
+    <div class="badge-grid">
+      {ciscoBadges.map((b) => (
+        <a class="badge reveal" href={b.url} target="_blank" rel="noopener">
+          <img src={b.img} alt={b.title} width="60" height="60" loading="lazy" />
+          <div><div class="b-t">{b.title}</div><div class="b-s">Cisco · Credly ✓</div></div>
+        </a>
+      ))}
+    </div>
+
+    <p class="subhead">Ciberseguridad · Coursera — Universidad de los Andes</p>
+    <div class="cert-grid">
+      {cyberCerts.map((c) => (
+        <a class="cert reveal" href={c.url} target="_blank" rel="noopener">
+          <img src={c.img} alt={c.title} loading="lazy" />
+          <div class="c-b"><div class="t">{c.title}</div><div class="s">{c.sub}</div></div>
+        </a>
+      ))}
+    </div>
+
+    <p class="subhead">Microsoft Learn · Fundamentos de Azure AI</p>
+    <div class="ms-list">
+      {msLearn.map((m) => (
+        <a class="ms" href={m.url} target="_blank" rel="noopener"><Icon name="cube" />{m.title}</a>
+      ))}
+    </div>
+  </div>
+</section>

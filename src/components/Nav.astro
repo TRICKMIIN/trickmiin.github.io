@@ -1,0 +1,32 @@
+---
+import Icon from './Icon.astro';
+import { profile, nav } from '../data/site.js';
+---
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <span class="logo">&gt;_</span>
+      <span class="who"><b>{profile.initials}</b><small>Redes &amp; Ciberseguridad</small></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Secciones">
+      {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn btn-primary" href={profile.cv} target="_blank" rel="noopener">
+        <Icon name="download" /><span class="lbl">CV</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">≡</button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const t = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  t?.addEventListener('click', () => links?.classList.toggle('open'));
+  links?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => links.classList.remove('open'))
+  );
+</script>

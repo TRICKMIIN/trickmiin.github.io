@@ -1,0 +1,32 @@
+---
+import Icon from './Icon.astro';
+import { skillGroups, softSkills } from '../data/site.js';
+---
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-tag">stack</p>
+      <h2>Competencias técnicas</h2>
+      <p>Infraestructura, redes y seguridad — más las habilidades que sostienen la operación diaria.</p>
+    </div>
+
+    <div class="skill-grid">
+      {skillGroups.map((g) => (
+        <div class="skill-card reveal">
+          <h3><Icon name={g.icon} />{g.title}</h3>
+          {g.skills.map((s) => (
+            <div class="bar-row">
+              <div class="bar-lab"><span>{s.name}</span><span>{s.level}%</span></div>
+              <div class="bar"><i data-w={s.level}></i></div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+
+    <p class="subhead">habilidades_blandas</p>
+    <div class="chips">
+      {softSkills.map((s) => <span class="chip">{s}</span>)}
+    </div>
+  </div>
+</section>

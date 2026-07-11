@@ -1,0 +1,33 @@
+---
+import { experience } from '../data/site.js';
+---
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-tag">experiencia</p>
+      <h2>Experiencia laboral</h2>
+      <p>Operación real de infraestructura, virtualización y continuidad de servicios.</p>
+    </div>
+
+    <div class="timeline">
+      {experience.map((e) => (
+        <div class="tl-item reveal">
+          <div class="tl-card">
+            <div class="tl-top">
+              <h3>{e.role}</h3>
+              <span class="tl-when">{e.when}</span>
+            </div>
+            <div class="tl-top"><span class="co">{e.company}</span></div>
+            <p class="tl-place">📍 {e.place}</p>
+            <ul>
+              {e.bullets.map((b) => <li set:html={b}></li>)}
+            </ul>
+            <div class="tl-tags">
+              {e.tags.map((t) => <span class={`tag ${t.v}`}>{t.t}</span>)}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

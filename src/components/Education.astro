@@ -1,0 +1,23 @@
+---
+import { education } from '../data/site.js';
+---
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-tag">educación</p>
+      <h2>Formación académica</h2>
+    </div>
+
+    <div class="edu-grid">
+      {education.map((e) => (
+        <div class="edu-card reveal">
+          <span class="flag">{e.flag}</span>
+          <div class="yr">{e.year}</div>
+          <h3>{e.title}</h3>
+          <div class="inst">{e.inst}</div>
+          <p>{e.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
